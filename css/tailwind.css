@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #8B7355; /* warm champagne gold */
+  --color-primary-50: #F7F5F1; /* champagne-50 */
+  --color-primary-100: #EDE8DF; /* champagne-100 */
+  --color-primary-200: #DDD4C5; /* champagne-200 */
+  --color-primary-300: #C8B89F; /* champagne-300 */
+  --color-primary-400: #A99579; /* champagne-400 */
+  --color-primary-500: #8B7355; /* champagne-500 */
+  --color-primary-600: #6F5C44; /* champagne-600 */
+  --color-primary-700: #5A4A37; /* champagne-700 */
+  --color-primary-800: #473A2C; /* champagne-800 */
+  --color-primary-900: #3A2F24; /* champagne-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #2C2C2C; /* sophisticated charcoal */
+  --color-secondary-50: #F7F7F7; /* charcoal-50 */
+  --color-secondary-100: #E8E8E8; /* charcoal-100 */
+  --color-secondary-200: #D1D1D1; /* charcoal-200 */
+  --color-secondary-300: #B0B0B0; /* charcoal-300 */
+  --color-secondary-400: #888888; /* charcoal-400 */
+  --color-secondary-500: #6B6B6B; /* charcoal-500 */
+  --color-secondary-600: #5A5A5A; /* charcoal-600 */
+  --color-secondary-700: #4A4A4A; /* charcoal-700 */
+  --color-secondary-800: #2C2C2C; /* charcoal-800 */
+  --color-secondary-900: #1F1F1F; /* charcoal-900 */
+
+  /* Accent Colors */
+  --color-accent: #1E3A5F; /* deep sapphire */
+  --color-accent-50: #F0F4F8; /* sapphire-50 */
+  --color-accent-100: #D9E2EC; /* sapphire-100 */
+  --color-accent-200: #BCCCDC; /* sapphire-200 */
+  --color-accent-300: #9FB3C8; /* sapphire-300 */
+  --color-accent-400: #829AB1; /* sapphire-400 */
+  --color-accent-500: #627D98; /* sapphire-500 */
+  --color-accent-600: #486581; /* sapphire-600 */
+  --color-accent-700: #334E68; /* sapphire-700 */
+  --color-accent-800: #1E3A5F; /* sapphire-800 */
+  --color-accent-900: #102A43; /* sapphire-900 */
+
+  /* Background Colors */
+  --color-background: #FEFCF8; /* soft pearl */
+  --color-surface: #F5F2ED; /* subtle cream */
+
+  /* Text Colors */
+  --color-text-primary: #1A1A1A; /* rich black */
+  --color-text-secondary: #6B6B6B; /* refined gray */
+
+  /* Status Colors */
+  --color-success: #2D5A27; /* forest emerald */
+  --color-success-50: #F0F8F0; /* emerald-50 */
+  --color-success-100: #C8E6C9; /* emerald-100 */
+  --color-success-500: #4CAF50; /* emerald-500 */
+
+  --color-warning: #B8860B; /* antique gold */
+  --color-warning-50: #FDF6E3; /* gold-50 */
+  --color-warning-100: #F9E79F; /* gold-100 */
+  --color-warning-500: #F1C40F; /* gold-500 */
+
+  --color-error: #8B2635; /* deep ruby */
+  --color-error-50: #FDF2F8; /* ruby-50 */
+  --color-error-100: #FCE4EC; /* ruby-100 */
+  --color-error-500: #E91E63; /* ruby-500 */
+
+  /* Shadows */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 2px 12px rgba(139, 115, 85, 0.12);
+  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  /* Borders */
+  --border-subtle: 1px solid rgba(139, 115, 85, 0.2);
+  --border-light: 1px solid rgba(139, 115, 85, 0.1);
+
+  /* Transitions */
+  --transition-fast: 300ms ease-out;
+  --transition-slow: 600ms ease-out;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+  }
+
+  .font-accent {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary-600 focus:ring-2 focus:ring-primary-200 focus:outline-none;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-primary text-primary px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary-200 focus:outline-none;
+  }
+
+  .card-elegant {
+    @apply bg-white rounded-xl p-6 transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-elegant:hover {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .input-elegant {
+    @apply w-full px-4 py-3 rounded-lg bg-surface border-0 focus:ring-2 focus:ring-primary-200 focus:outline-none transition-all duration-300;
+    border: var(--border-subtle);
+  }
+
+  .text-accent {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .shadow-elegant {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .border-elegant {
+    border: var(--border-subtle);
+  }
+
+  .transition-elegant {
+    transition: var(--transition-fast);
+  }
+
+  .transition-story {
+    transition: var(--transition-slow);
+  }
+}
